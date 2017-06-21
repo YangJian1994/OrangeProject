@@ -1,13 +1,292 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:line="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.orangeproject.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/show_layout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标题"
+            android:textSize="22sp"
+            android:layout_margin="10dp"/>
+
+        <tech.linjiang.suitlines.SuitLines
+            android:id="@+id/sl_AQI"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#dfdede"
+            line:lineType="curve"
+            line:xySize="8"
+            line:xyColor="@color/colorAccent"
+            line:needEdgeEffect="true"
+            line:colorEdgeEffect="@color/colorPrimaryDark"
+            line:needClickHint="true"
+            line:colorHint="@color/colorPrimary"
+            line:maxOfVisible="8"
+            line:countOfY="6"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight="1"
+            android:background="#e0e0e0"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/module_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:id="@+id/air_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#BDBDBD"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="空气模块"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_margin="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PM2.5："
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="70"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AQI："
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_AQI"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="94"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:id="@+id/battery_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#BDBDBD"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="电池模块"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_margin="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="剩余电量："
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_battery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="70%"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:id="@+id/disk_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#BDBDBD"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="U盘模块"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_margin="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="U盘可用空间："
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_disk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="16G"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:id="@+id/wrist_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#BDBDBD"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="手环模块"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_margin="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="手环电量："
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_wrist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="70%"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="步数："
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_step"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5638"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
