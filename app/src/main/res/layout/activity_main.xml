@@ -17,6 +17,7 @@
         android:gravity="center_horizontal">
 
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="标题"
@@ -24,7 +25,8 @@
             android:layout_margin="10dp"/>
 
         <tech.linjiang.suitlines.SuitLines
-            android:id="@+id/sl_AQI"
+            android:visibility="gone"
+            android:id="@+id/sl_detail"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="#dfdede"
