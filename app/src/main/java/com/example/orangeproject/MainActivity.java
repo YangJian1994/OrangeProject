@@ -6,18 +6,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.orangeproject.bean.Data;
 import com.example.orangeproject.service.UsbService;
-import com.example.orangeproject.utils.MessageUtil;
 import com.google.gson.Gson;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
